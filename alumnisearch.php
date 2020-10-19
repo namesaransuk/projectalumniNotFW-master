@@ -110,11 +110,7 @@
                 <?php } ?>
 
                 <?php
-                include('php/connect.php');
-                $keyword = @$_POST['search'];
-
-                $sql = "SELECT * FROM `user` WHERE `u_std` LIKE '%$keyword%'";
-                $stmt = $conn->query($sql);
+                include('php/search.php');
 
                 while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 ?>
