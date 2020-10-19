@@ -2,7 +2,7 @@
 session_start();
 include('connect.php');
 if (isset($_POST['but'])) {
-    $sql = "SELECT * FROM `user` WHERE `u_email` = '" . $_POST['u_email'] . "' AND `u_pass` = '" . $_POST['u_pass'] . "'";
+    $sql = "SELECT * FROM `user` WHERE `u_email` = '" . $_POST['u_email'] . "' AND `u_pass` = '" . md5($_POST['u_pass']) . "'";
     $stmt = $conn->query($sql);
 
     if ($stmt->rowCount() > 0) {

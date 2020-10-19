@@ -1,5 +1,7 @@
 <!--Navbar-->
-<?php session_start() ?>
+<?php 
+session_start(); 
+?>
 <nav class="navbar navbar-expand-lg navbar-dark secondary-color">
 
     <!-- Navbar brand -->

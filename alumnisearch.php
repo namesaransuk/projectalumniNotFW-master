@@ -110,8 +110,13 @@
                 <?php } ?>
 
                 <?php
-                include('php/show_alumni.php');
-                while ($result = $stmt1->fetch(PDO::FETCH_ASSOC)) {
+                include('php/connect.php');
+                $keyword = @$_POST['search'];
+
+                $sql = "SELECT * FROM `user` WHERE `u_std` LIKE '%$keyword%'";
+                $stmt = $conn->query($sql);
+
+                while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                     <div class="row border border-secondary pt-2 mb-2 rounded-pill shadow">
                         <div class="form-group col-sm-3 my-auto text-center">
